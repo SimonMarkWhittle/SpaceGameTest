@@ -3,7 +3,7 @@ class AutoGun extends Weapon {
   boolean autoFire = false;
   
   AutoGun() {super();}
-  
+  /*  
   void leftPress() {
     if (spaceMeta && rightDown) {
       bothMetaPrimaryPress();
@@ -50,7 +50,7 @@ class AutoGun extends Weapon {
       secondaryRelease();
     }
   }
-  
+  */
   void primaryPress() {print("shooty dooty "); autoFire = true;}
   void primaryRelease() {println("shootied"); autoFire = false;}
 

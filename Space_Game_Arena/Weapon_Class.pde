@@ -1,5 +1,5 @@
 class Weapon extends Thing {
-  boolean spaceMeta = false, leftDown = false, rightDown = false;
+  boolean spaceMeta = false, leftDown = false, rightDown = false, slow = false;
   
   Weapon() {}
   
@@ -75,4 +75,8 @@ class Weapon extends Thing {
   void checkEffects() {}
   
   void weaponUpdate() {}
+  
+  boolean slowCheck() {
+    return rightDown;
+  }
 }

@@ -10,14 +10,14 @@ class Player extends Guy {
   radius = 10;
   diameter = radius*2;
   speed = 30/diameter;
-  metaSpeed = speed/3;
+  slowSpeed = speed/3;
   canMove = true;
   direction = (float)Math.atan2(mouseY - loc.y, mouseX - loc.x);
   health = 100+diameter;
   mov.x = 0;
   mov.y = 0;
   loc.set(screenW/2, screenH/2);
-  weapon = autoGun;
+  weapon = dualRM;
   }
   
   void update() {
@@ -53,7 +53,7 @@ class Player extends Guy {
       vel.add(Bvel);
       vel.add(Rvel);
       vel.add(Lvel);
-      if (isMeta) { vel.setMag(metaSpeed);}
+      if (isSlow) { vel.setMag(slowSpeed);}
       else {vel.setMag(speed);}
     mov.add(vel);
     loc.add(vel);

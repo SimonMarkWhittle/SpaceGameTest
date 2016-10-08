@@ -4,6 +4,9 @@ int screenH = 600;
 
 Fists fists = new Fists();
 AutoGun autoGun = new AutoGun();
+RangeAndRange dualRange = new RangeAndRange();
+ShieldAndShield dualShield = new ShieldAndShield();
+RangeAndMelee dualRM = new RangeAndMelee();
 Player player = new Player();
 
 void setup() {

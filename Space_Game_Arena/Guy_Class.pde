@@ -1,8 +1,8 @@
 class Guy extends Thing {
   Weapon weapon;
   ArrayList<Guy> enemies;
-  boolean canFdash=false, canBdash=false, canRdash=false, canLdash=false, moveF=false, moveB=false, moveL=false, moveR=false, isMeta=false, isGrapple=false, isWrestle=false;
-  float metaSpeed = speed/3;
+  boolean canFdash=false, canBdash=false, canRdash=false, canLdash=false, moveF=false, moveB=false, moveL=false, moveR=false, isSlow=false, isGrapple=false, isWrestle=false;
+  float slowSpeed = speed/3;
   
   Guy() {super();}
   
@@ -11,9 +11,6 @@ class Guy extends Thing {
   void move() {}
   
   void checkWeapon() {
-    if (weapon.rightDown) {
-      isMeta = true;
-    }
-    else isMeta = false;
+    isSlow = weapon.slowCheck();
   }
 }
