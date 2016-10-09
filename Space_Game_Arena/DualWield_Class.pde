@@ -2,23 +2,26 @@ class RangeAndRange extends Weapon {
 
   RangeAndRange() { super(); }
 
-  void primaryPress() {print("primary shooty dooty ");}
-  void primaryRelease() {println("primary shootied");}
+  DualedRange primary = new DualedRange();
+  DualedRange secondary = new DualedRange();
+
+  void primaryPress() {print("primary "); primary.shootPress();}
+  void primaryRelease() {print("primary "); primary.shootRelease();}
 
   void rightDownPrimaryPress() {primaryPress();}
   void rightDownPrimaryRelease() {primaryRelease();}
 
-  void spaceMetaPrimaryPress() {print("zoomie shooty Primary ");}
-  void spaceMetaPrimaryRelease() {println("zoomie primary shootied");}
+  void spaceMetaPrimaryPress() {print("primary "); primary.zoomShootPress();}
+  void spaceMetaPrimaryRelease() {print("primary "); primary.zoomShootRelease();}
   
   void bothMetaPrimaryPress() {spaceMetaPrimaryPress();}
   void bothMetaPrimaryRelease() {spaceMetaPrimaryRelease();}
   
-  void secondaryPress() {print("secondary shooty dooty ");}
-  void secondaryRelease() {println("secondary shootied");}
+  void secondaryPress() {print("secondary "); secondary.shootPress();}
+  void secondaryRelease() {print("secondary "); secondary.shootRelease();}
   
-  void metaSecondaryPress() {print("zoomie secondary shooty ");}
-  void metaSecondaryRelease() {println("zoomie secondary shootied");}
+  void metaSecondaryPress() {print("secondary "); secondary.zoomShootPress();}
+  void metaSecondaryRelease() {print("secondary "); secondary.zoomShootRelease();}
   
   boolean slowCheck() {
     return spaceMeta;
@@ -30,23 +33,26 @@ class MeleeAndMelee extends Weapon {
 
   MeleeAndMelee() { super(); }
 
-  void primaryPress() {print("primary slashy ");}
-  void primaryRelease() {println("primary slashied");}
+  DualedMelee primary = new DualedMelee();
+  DualedMelee secondary = new DualedMelee();
+
+  void primaryPress() {print("primary "); primary.attackPress();}
+  void primaryRelease() {print("primary "); primary.attackRelease();}
 
   void rightDownPrimaryPress() {primaryPress();}
   void rightDownPrimaryRelease() {primaryRelease();}
 
-  void spaceMetaPrimaryPress() {print("primary parry ");}
-  void spaceMetaPrimaryRelease() {println("primary parried");}
+  void spaceMetaPrimaryPress() {print("primary "); primary.parryPress();}
+  void spaceMetaPrimaryRelease() {print("primary "); primary.parryRelease();}
   
   void bothMetaPrimaryPress() {spaceMetaPrimaryPress();}
   void bothMetaPrimaryRelease() {spaceMetaPrimaryRelease();}
   
-  void secondaryPress() {print("secondary slashy ");}
-  void secondaryRelease() {println("secondary slashied");}
+  void secondaryPress() {print("secondary "); secondary.attackPress();}
+  void secondaryRelease() {print("secondary "); secondary.attackRelease();}
   
-  void metaSecondaryPress() {print("secondary parry ");}
-  void metaSecondaryRelease() {println("secondary parried");}
+  void metaSecondaryPress() {print("secondary "); secondary.parryPress();}
+  void metaSecondaryRelease() {print("secondary "); secondary.parryRelease();}
   
   boolean slowCheck() {
     return spaceMeta;
@@ -58,47 +64,53 @@ class ShieldAndShield extends Weapon {
 
   ShieldAndShield() { super(); }
 
-  void primaryPress() {print("primary bashum smashum ");}
-  void primaryRelease() {println("primary bashioum'd");}
+  DualedShield primary = new DualedShield();
+  DualedShield secondary = new DualedShield();
 
-  void rightDownPrimaryPress() {print("secondary parry ");}
-  void rightDownPrimaryRelease() {println("secondary parry'd");}
+  void primaryPress() {print("primary "); primary.bashPress();}
+  void primaryRelease() {print("primary "); primary.bashRelease();}
 
-  void spaceMetaPrimaryPress() {print("secondary bashum smashum ");}
-  void spaceMetaPrimaryRelease() {println("secondary bashioum'd");}
+  void rightDownPrimaryPress() {print("secondary "); secondary.parryPress();}
+  void rightDownPrimaryRelease() {print("secondary "); secondary.parryRelease();}
+
+  void spaceMetaPrimaryPress() {print("secondary "); secondary.bashPress();}
+  void spaceMetaPrimaryRelease() {print("secondary "); secondary.bashRelease();}
   
-  void bothMetaPrimaryPress() {print("primary parry ");}
-  void bothMetaPrimaryRelease() {println("primary parry'd");}
+  void bothMetaPrimaryPress() {print("primary "); primary.parryPress();}
+  void bothMetaPrimaryRelease() {print("primary "); primary.parryRelease();}
   
-  void secondaryPress() {print("secondary block ");}
-  void secondaryRelease() {println("secondary block'd");}
+  void secondaryPress() {print("secondary "); secondary.blockPress();}
+  void secondaryRelease() {print("secondary "); secondary.blockRelease();}
   
-  void metaSecondaryPress() {print("primary block ");}
-  void metaSecondaryRelease() {println("primary block'd");}
+  void metaSecondaryPress() {print("primary "); primary.blockPress();}
+  void metaSecondaryRelease() {print("primary "); primary.blockRelease();}
   
 }
 
 class RangeAndMelee extends Weapon {
 
   RangeAndMelee() { super(); }
-
-  void primaryPress() {print("shooty dooty ");}
-  void primaryRelease() {println("shootied");}
-
-  void rightDownPrimaryPress() {print("zoomie shooty ");}
-  void rightDownPrimaryRelease() {println("zoomie shootied");}
-
-  void spaceMetaPrimaryPress() {print("slashy gashy ");}
-  void spaceMetaPrimaryRelease() {println("slashy gashy'd");}
   
-  void bothMetaPrimaryPress() {print("parry garry ");}
-  void bothMetaPrimaryRelease() {println("parry'd");}
+  DualedRange range = new DualedRange();
+  DualedMelee melee = new DualedMelee();
+
+  void primaryPress() {print("range "); range.shootPress();}
+  void primaryRelease() {print("range "); range.shootRelease();}
+
+  void rightDownPrimaryPress() {print("range "); range.zoomShootPress();}
+  void rightDownPrimaryRelease() {print("range "); range.zoomShootRelease();}
+
+  void spaceMetaPrimaryPress() {print("melee "); melee.attackPress();}
+  void spaceMetaPrimaryRelease() {print("melee "); melee.attackRelease();}
+  
+  void bothMetaPrimaryPress() {print("melee "); melee.parryPress();}
+  void bothMetaPrimaryRelease() {print("melee "); melee.parryRelease();}
   
   void secondaryPress() {print("zoomie ");}
   void secondaryRelease() {println("zoomie'd");}
   
-  void metaSecondaryPress() {print("blocky ");}
-  void metaSecondaryRelease() {println("blockie'd");}
+  void metaSecondaryPress() {print("melee "); melee.blockPress();}
+  void metaSecondaryRelease() {print("melee "); melee.blockRelease();}
   
 }
 
